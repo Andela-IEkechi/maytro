@@ -1,0 +1,20 @@
+<section class="views">
+  <p id="notice"><%= notice %></p>
+  <h1 class="page-header"><%= @video.title %></h1>
+  <div class="pull-right">
+    <p><strong>Released on: </strong><%= @video.release_date %></p>
+    <h4>By : <%= @video.artist_name %></h4>
+  </div>
+  <div>
+    <iframe width="700" height="500" src="http://www.youtube.com/embed/<%= @video.video_file %>" frameborder="0">
+    </iframe>
+  </div>
+  <h3>
+    <%= @video.description %>
+  </h3>
+  <% if current_user.try(:admin?) %>
+      <%= link_to 'Edit Video Info', edit_video_path(@video), class: "btn btn-default" %>
+      <%= link_to 'Delete Video', @video, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <%= link_to 'Back', videos_path , class: "btn btn-default" %>
+</section>

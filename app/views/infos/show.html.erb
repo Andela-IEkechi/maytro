@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @info.title %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @info.story %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @info.reporter %>
+</p>
+
+<p>
+  <strong>Pic story:</strong>
+  <%= @info.pic_story %>
+  <%= image_tag(@info.pic_story_url, :width => 600) if @info.pic_story.present? %>
+</p>
+
+<%= link_to 'Edit', edit_info_path(@info) %> |
+<%= link_to 'Back', infos_path %>

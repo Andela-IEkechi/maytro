@@ -1,0 +1,29 @@
+<section class="views">
+  <h1 class="page-header">Maytronomy's Videos</h1>
+  <div class="top">
+    <ul class='maytroList'>
+      <% @videos.each do |video| %>
+          <li class='list-group-item'>
+            <%= link_to(video) do %>
+                <div class="maytroPicture">
+                  <%= image_tag(video.album_art_url, width: 300) %>
+                </div>
+                <strong><%= video.title %></strong>
+                <div class='maytroDesc'>
+                  <p><%= truncate(video.description ,length: 35 )%><span class='readMore'> View »</span></p>
+                </div>
+                <% if current_user.try(:admin?) %>
+                    <%= link_to 'Edit', edit_video_path(video), class: "btn btn-default" %>
+                    <%= link_to 'Destroy', video, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div class="btn btn-default">
+    <i class="glyphicon glyphicon-new-window"></i>
+    <%= link_to 'New Video', new_video_path %>
+  </div>
+</section>

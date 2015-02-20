@@ -1,0 +1,39 @@
+<section class="home-up row text-center">
+  <section class="row intro">
+    <h1>Making Good Music Like Nobody's Business!</h1>
+  </section>
+  <section class="types row">
+    <h2 class="page-header">Maytronomy Music</h2>
+    <ul class="container col-md-12">
+      <li class="col-md-3">
+        <div>
+          <p class="page-header"><span class="glyphicon glyphicon-headphones head"></span>SONGS</p>
+          <%=link_to(image_tag("piano.jpeg",size: "250x250", alt: "songs-logo"),
+                     audios_path, title:"See All Songs", class:"logo") %>
+        </div>
+      </li>
+      <li class="col-md-3">
+        <div>
+          <p class="page-header"><span class="glyphicon glyphicon-facetime-video head"></span>VIDEOS</p>
+          <%=link_to(image_tag("videos.png",size: "250x250", alt: "videos-logo"),
+                     videos_path, title:"Video Collection", class:"logo") %>
+        </div>
+      </li>
+      <li class="col-md-3">
+        <div>
+          <p class="page-header"><span class="glyphicon glyphicon-camera head"></span>GALLERIA</p>
+          <%=link_to(image_tag("galleria.jpg",size: "250x250", alt: "galleria-logo"),
+                     photos_path, title:"Photo Shoots", class:"logo") %>
+        </div>
+      </li>
+      <li class="col-md-3">
+        <div>
+          <p class="page-header"><span class="glyphicon glyphicon-calendar head"></span>EVENTS</p>
+          <%=link_to(image_tag("events.jpg",size: "250x250", alt: "events-logo"),
+                     events_path, title:"News And Coming Events", class:"logo") %>
+        </div>
+      </li>
+    </ul><br>
+    <h4>We are dedicated to making quality music that will resonate deeply with our listeners and touch your souls.</h4>
+  </section>
+</section>

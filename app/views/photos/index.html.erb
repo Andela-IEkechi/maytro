@@ -1,0 +1,24 @@
+<section class="text-center">
+  <h1 class="page-header">Maytronomy's Galleria</h1>
+  <div class="top">
+    <ul class='maytroList'>
+      <% @photos.each do |photo| %>
+          <li class='list'>
+            <%= link_to(photo) do %>
+                <div class="maytroPicture">
+                  <%= image_tag(photo.picture_url, :width => 300) %>
+                </div>
+                <div class='maytroDesc'>
+                  <p><%= truncate(photo.description ,:length=>35 )%><span class='readMore'> View »</span></p>
+                </div>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div class="btn btn-info">
+    <i class="glyphicon glyphicon-new-window"></i>
+    <%= link_to 'New Photo', new_photo_path %>
+  </div>
+</section>
